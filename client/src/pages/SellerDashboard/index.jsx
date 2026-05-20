@@ -104,8 +104,8 @@ export default function Admin() {
                                 ]}
                             />
                             <NavLink to="/seller/profile" className={({ isActive }) => `seller-sider-link !text-black hover:!text-[var(--primary)] ${open && '!p-[12px] w-fit'} ${isActive && 'seller-sider-link-active'}`}><UserCog2 size={16} /> <span className={`sider-text ${open && '!hidden'}`}>Profile</span></NavLink>
-                            <NavLink to="/seller/domain" className={({ isActive }) => `seller-sider-link !text-black hover:!text-[var(--primary)] ${open && '!p-[12px] w-fit'} ${isActive && 'seller-sider-link-active'}`}><Globe size={16} /> <span className={`sider-text ${open && '!hidden'}`}>Domain</span></NavLink>
-                            <NavLink to="/seller/tags-manager" className={({ isActive }) => `seller-sider-link !text-black hover:!text-[var(--primary)] ${open && '!p-[12px] w-fit'} ${isActive && 'seller-sider-link-active'}`}><CodeXml size={16} /> <span className={`sider-text ${open && '!hidden'}`}>Tags Manager</span></NavLink>
+                            {user.plan === "Advanced" && <NavLink to="/seller/domain" className={({ isActive }) => `seller-sider-link !text-black hover:!text-[var(--primary)] ${open && '!p-[12px] w-fit'} ${isActive && 'seller-sider-link-active'}`}><Globe size={16} /> <span className={`sider-text ${open && '!hidden'}`}>Domain</span></NavLink>}
+                            {user.plan === "Advanced" && <NavLink to="/seller/tags-manager" className={({ isActive }) => `seller-sider-link !text-black hover:!text-[var(--primary)] ${open && '!p-[12px] w-fit'} ${isActive && 'seller-sider-link-active'}`}><CodeXml size={16} /> <span className={`sider-text ${open && '!hidden'}`}>Tags Manager</span></NavLink>}
                             <NavLink to="/seller/subscriptions" className={({ isActive }) => `seller-sider-link !text-black hover:!text-[var(--primary)] ${open && '!p-[12px] w-fit'} ${isActive && 'seller-sider-link-active'}`}><CreditCard size={16} /> <span className={`sider-text ${open && '!hidden'}`}>Subscriptions</span></NavLink>
                         </div>
 

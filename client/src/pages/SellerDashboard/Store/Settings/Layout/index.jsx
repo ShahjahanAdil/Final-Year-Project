@@ -12,18 +12,24 @@ const initialState = {
     }
 }
 
-const styles = [
-    { key: "style1", title: "Classic", desc: "Sharp edges", rounded: "rounded-none" },
-    { key: "style2", title: "Modern", desc: "Rounded edges", rounded: "rounded-3xl" },
-    { key: "style3", title: "Emarald", desc: "Smooth feel", rounded: "rounded-3xl" },
-    { key: "jewellery", title: "Jewellery", desc: "Premium Feel", rounded: "rounded-none" },
-    { key: "fashion", title: "Fashion", desc: "Modern Look", rounded: "rounded-none" },
-];
-
 export default function Layout({ user, settings, setSettings }) {
     const [state, setState] = useState(initialState)
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+
+    const styles = user.plan === "Advanced" ? [
+        { key: "style1", title: "Classic", desc: "Sharp edges", rounded: "rounded-none" },
+        { key: "style2", title: "Modern", desc: "Rounded edges", rounded: "rounded-3xl" },
+        { key: "style3", title: "Emarald", desc: "Smooth feel", rounded: "rounded-3xl" },
+        { key: "jewellery", title: "Jewellery", desc: "Premium Feel", rounded: "rounded-none" },
+        { key: "fashion", title: "Fashion", desc: "Modern Look", rounded: "rounded-none" },
+    ] : [
+        { key: "style1", title: "Classic", desc: "Sharp edges", rounded: "rounded-none" },
+        { key: "style2", title: "Modern", desc: "Rounded edges", rounded: "rounded-3xl" },
+        { key: "style3", title: "Emarald", desc: "Smooth feel", rounded: "rounded-3xl" },
+        // { key: "jewellery", title: "Jewellery", desc: "Premium Feel", rounded: "rounded-none" },
+        // { key: "fashion", title: "Fashion", desc: "Modern Look", rounded: "rounded-none" },
+    ];
 
     useEffect(() => {
         const { homePageStyle, categoriesSection, showCategoriesText, productListing } = settings.layout
