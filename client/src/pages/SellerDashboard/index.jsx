@@ -59,10 +59,16 @@ export default function Admin() {
                                 title="Store"
                                 open={open}
                                 seller={true}
-                                items={[
+                                items={user.plan === "Advanced" ? [
                                     { label: "Menus", path: "/seller/store/menus" },
                                     { label: "Pages", path: "/seller/store/pages" },
                                     { label: "Sale", path: "/seller/store/sale" },
+                                    { label: "Coupons", path: "/seller/store/coupons" },
+                                    { label: "Faqs", path: "/seller/store/faqs" },
+                                    { label: "Settings", path: "/seller/store/settings/theme" },
+                                ] : [
+                                    { label: "Menus", path: "/seller/store/menus" },
+                                    { label: "Pages", path: "/seller/store/pages" },
                                     { label: "Coupons", path: "/seller/store/coupons" },
                                     { label: "Faqs", path: "/seller/store/faqs" },
                                     { label: "Settings", path: "/seller/store/settings/theme" },
