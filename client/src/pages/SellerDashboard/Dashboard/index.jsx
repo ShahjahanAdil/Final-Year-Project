@@ -187,14 +187,14 @@ export default function Dashboard() {
                 </div>
 
                 <div className='flex justify-between items-center bg-white p-6 border border-gray-200 my-4 light-shad'>
-                    <a href={`http://localhost:5173/brand/${user.brandSlug}`} target="_blank" rel="noopener noreferrer"
+                    <a href={`${import.meta.env.VITE_MAIN_DOMAIN}/brand/${user.brandSlug}`} target="_blank" rel="noopener noreferrer"
                         className='text-sm text-blue-600 hover:underline'
                     >
-                        http://localhost:5173/brand/{user.brandSlug}
+                        ${import.meta.env.VITE_MAIN_DOMAIN}/brand/{user.brandSlug}
                     </a>
                     <button className='flex items-center gap-1 bg-neutral-100 px-3 py-1.5 text-xs hover:bg-neutral-100/50 transition-all duration-300'
                         onClick={() => {
-                            navigator.clipboard.writeText(`http://localhost:5173/brand/${user.brandSlug}`)
+                            navigator.clipboard.writeText(`${import.meta.env.VITE_MAIN_DOMAIN}/brand/${user.brandSlug}`)
                             setCopied(true)
                             setTimeout(() => setCopied(false), 2000)
                         }}
